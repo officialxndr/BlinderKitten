@@ -47,6 +47,7 @@
 #include "UI/CuelistSheet/CuelistSheet.h"
 #include "UI/PatchSheet/PatchSheet.h"
 #include "UI/Clock.h"
+#include "UI/TimecodeView.h"
 
 //==============================================================================
 MainContentComponent::MainContentComponent()
@@ -159,6 +160,7 @@ void MainContentComponent::init()
     ShapeShifterFactory::getInstance()->defs.add(new ShapeShifterDefinition("Cuelist sheet", &CuelistSheetUI::create));
     ShapeShifterFactory::getInstance()->defs.add(new ShapeShifterDefinition("Patch sheet", &PatchSheetUI::create));
     ShapeShifterFactory::getInstance()->defs.add(new ShapeShifterDefinition("Clock", &ClockUI::create));
+    ShapeShifterFactory::getInstance()->defs.add(new ShapeShifterDefinition("Timecode", &TimecodeViewUI::create));
 
     ShapeShifterManager::getInstance()->isInViewSubMenu.set("Interfaces", "Lists");
     ShapeShifterManager::getInstance()->isInViewSubMenu.set("Channels config", "Lists");
@@ -202,6 +204,7 @@ void MainContentComponent::init()
     ShapeShifterManager::getInstance()->isInViewSubMenu.set("Cuelist sheet", "Panels");
     ShapeShifterManager::getInstance()->isInViewSubMenu.set("Patch sheet", "Panels");
     ShapeShifterManager::getInstance()->isInViewSubMenu.set("Clock", "Panels");
+    ShapeShifterManager::getInstance()->isInViewSubMenu.set("Timecode", "Panels");
 
     ShapeShifterManager::getInstance()->isInViewSubMenu.set("Outliner", "");
     ShapeShifterManager::getInstance()->isInViewSubMenu.set("Dashboard", "Organic Tools");
